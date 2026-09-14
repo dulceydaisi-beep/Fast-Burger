@@ -1,5 +1,5 @@
 // REEMPLAZAR CON EL NÚMERO DE FAST BURGER (con código de país, ej: 5491112345678)
-const TELEFONO_BURGER = "5492612712021"; 
+const TELEFONO_BURGER = "5492612470256"; 
 
 let carrito = [];
 
