@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Burger - Menú y Pedidos</title>
+    <!-- Fuente llamativa estilo cartel/street-food -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BANNER PRINCIPAL CON IMAGEN DE FONDO Y TIPOGRAFÍA ESPECIAL */
+        header {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200') center/cover no-repeat;
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 4px solid #e50914;
+        }
+
+        header h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 3rem;
+            color: #ffcc00;
+            margin: 0;
+            text-shadow: 3px 3px 0px #e50914, 6px 6px 10px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .carrito-panel {
+            flex: 1;
+            min-width: 280px;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+            border: 1px solid #333;
+        }
+
+        .categoria {
+            background-color: #1e1e1e;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e50914;
+        }
+
+        .categoria h3 {
+            margin-top: 0;
+            color: #f5c518;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .item img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1rem;
+            display: block;
+        }
+
+        .item-desc {
+            font-size: 0.8rem;
+            color: #bbb;
+            margin-top: 4px;
+        }
+
+        .btn-agregar {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn-agregar:hover {
+            background-color: #b20710;
+        }
+
+        #lista-carrito {
+            list-style: none;
+            padding: 0;
+        }
+
+        #lista-carrito li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .vacio {
+            color: #888;
+        }
+
+        .btn-eliminar {
+            background: transparent;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #444;
+            background-color: #2b2b2b;
+            color: #fff;
+            width: 100%;
+            font-family: inherit;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            font-weight: bold;
+            padding: 12px;
+            font-size: 1rem;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebd56;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍔 FAST BURGER 🍟</h1>
+        <p>Hacé tu pedido por WhatsApp</p>
+    </header>
+
+    <main class="container">
+        <!-- Menú de Productos -->
+        <section class="menu">
+            <h2>NUESTRO MENÚ</h2>
+            
+            <div class="categoria">
+                <h3>Hamburguesas Simples (Con Papas) — $9.000</h3>
+                <div class="item">
+                    <img src="/img/Burger simple.jpg.png" alt="Simple Clásica">
+                    <div class="item-info">
+                        <span class="item-title">Simple Clásica</span>
+                        <div class="item-desc">Carne smash, lechuga, tomate, huevo, jamón y queso</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Simple Clásica', 9000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Burger cheese.jpg.png" alt="Simple Cheese">
+                    <div class="item-info">
+                        <span class="item-title">Simple Cheese</span>
+                        <div class="item-desc">Carne smash, doble queso cheddar y bacon</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Simple Cheese', 9000)">+ Agregar</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>Hamburguesas Dobles (Con Papas) — $12.000</h3>
+                <div class="item">
+                    <img src="/img/Burger doble.jpg.png" alt="Doble Clásica">
+                    <div class="item-info">
+                        <span class="item-title">Doble Clásica</span>
+                        <div class="item-desc">Doble carne smash, lechuga, tomate, huevo, jamón y queso</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Doble Clásica', 12000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Bueger doble cheese.jpg.png" alt="Doble Cheese">
+                    <div class="item-info">
+                        <span class="item-title">Doble Cheese</span>
+                        <div class="item-desc">Doble carne smash, doble queso cheddar y bacon</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Doble Cheese', 12000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Buerger oklahoma.jpg.png" alt="Doble Oklahoma">
+                    <div class="item-info">
+                        <span class="item-title">Doble Oklahoma</span>
+                        <div class="item-desc">Doble carne smash, cebolla a la plancha y cheddar</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Doble Oklahoma', 12000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Burger The fast.jpg.png" alt="Doble The Fast">
+                    <div class="item-info">
+                        <span class="item-title">Doble The Fast</span>
+                        <div class="item-desc">Doble carne smash, doble cheddar, panceta y huevo frito</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Doble The Fast', 12000)">+ Agregar</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>Especiales (Con Papas) — $15.000</h3>
+                <div class="item">
+                    <img src="/img/Burger cuadruple.jpg.png" alt="Cuádruple Cheese">
+                    <div class="item-info">
+                        <span class="item-title">Cuádruple Cheese</span>
+                        <div class="item-desc">4 carnes smash, 4 queso cheddar y bacon</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Cuádruple Cheese', 15000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Burger mexican.jpg.png" alt="Mexican Burger">
+                    <div class="item-info">
+                        <span class="item-title">Mexican Burger</span>
+                        <div class="item-desc">3 carnes smash, guacamole, doble cheddar y bacon</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Mexican Burger', 15000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Burger doritos.jpg.png" alt="Doritos Crunch">
+                    <div class="item-info">
+                        <span class="item-title">Doritos Crunch</span>
+                        <div class="item-desc">3 carnes smash, queso cheddar, Doritos y bacon</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Doritos Crunch', 15000)">+ Agregar</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>Carne Desmechada (Con Papas) — $15.000</h3>
+                <div class="item">
+                    <img src="/img/El campeón.jpg.png" alt="El Campeón">
+                    <div class="item-info">
+                        <span class="item-title">El Campeón</span>
+                        <div class="item-desc">Carne desmechada, queso blanco cremoso, cebolla caramelizada, BBQ y mayo de ajo</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('El Campeón', 15000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/El campeón chesse.jpg.png" alt="El Campeón Cheese">
+                    <div class="item-info">
+                        <span class="item-title">El Campeón Cheese</span>
+                        <div class="item-desc">Carne desmechada, cheddar, cebolla caramelizada, BBQ y mayo de chimi</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('El Campeón Cheese', 15000)">+ Agregar</button>
+                </div>
+            </div>
+
+            <div class="categoria">
+                <h3>Combos para Compartir</h3>
+                <div class="item">
+                    <img src="/img/Combo doble.jpg.png" alt="Combo Doble Burger">
+                    <div class="item-info">
+                        <span class="item-title">Combo Doble Burger - $25.000</span>
+                        <div class="item-desc">2 Hamb. Dobles + Papas + 2 Latas de gaseosa</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Combo Doble Burger', 25000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/Combo rasta.jpg.png" alt="Combo Rasta">
+                    <div class="item-info">
+                        <span class="item-title">Combo Rasta - $27.000</span>
+                        <div class="item-desc">2 Hamb. Dobles + Papas + 2 Latas + 2 Alfajores Rasta</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Combo Rasta', 27000)">+ Agregar</button>
+                </div>
+            </div>
+            <!-- SECCIÓN BEBIDAS -->
+            <div class="categoria">
+                <h3>🥤 Bebidas</h3>
+                <div class="item">
+                    <img src="/img/coca.jpg.png" alt="Coca-Cola 354cc">
+                    <div class="item-info">
+                        <span class="item-title">Coca-Cola (Lata 354cc) — $1.500</span>
+                        <div class="item-desc">Sabor Original</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Coca-Cola 354cc', 1500)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/sprite.jpg.png" alt="Sprite 354cc">
+                    <div class="item-info">
+                        <span class="item-title">Sprite (Lata 354cc) — $1.500</span>
+                        <div class="item-desc">Sabor Lima-Limón</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Sprite 354cc', 1500)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/fanta.jpg.png" alt="Fanta 354cc">
+                    <div class="item-info">
+                        <span class="item-title">Fanta (Lata 354cc) — $1.500</span>
+                        <div class="item-desc">Sabor Naranja</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Fanta 354cc', 1500)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/lata.jpg (2).png" alt="Quilmes 473cc">
+                    <div class="item-info">
+                        <span class="item-title">Cerveza Quilmes 473cc — $2.000</span>
+                        <div class="item-desc">Lata 473cc</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Quilmes 473cc', 2000)">+ Agregar</button>
+                </div>
+                <div class="item">
+                    <img src="/img/latón.jpg.png" alt="Quilmes 710cc">
+                    <div class="item-info">
+                        <span class="item-title">Cerveza Quilmes 710cc — $3.000</span>
+                        <div class="item-desc">Lata 710cc</div>
+                    </div>
+                    <button class="btn-agregar" onclick="agregarAlCarrito('Quilmes 710cc', 3000)">+ Agregar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario y Carrito -->
+        <section class="carrito-panel">
+            <h2>TU PEDIDO</h2>
+            <ul id="lista-carrito">
+                <li class="vacio">No agregaste productos aún.</li>
+            </ul>
+
+            <h3>Total: $<span id="total-precio">0</span></h3>
+
+            <form id="form-pedido">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+                <label for="direccion">Dirección de Entrega:</label>
+                <input type="text" id="direccion" placeholder="Calle, número y localidad" required>
+
+                <label for="pago">Forma de Pago:</label>
+                <select id="pago">
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Tarjeta">Tarjeta</option>
+                </select>
+
+                <label for="notas">Notas / Aclaraciones:</label>
+                <textarea id="notas" placeholder="Sin cebolla, aderezos aparte, etc."></textarea>
+
+                <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">
+                    📱 Enviar Pedido por WhatsApp
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // REEMPLAZAR CON EL NÚMERO DE FAST BURGER (con código de país, ej: 5491112345678)
+        const TELEFONO_BURGER = "5491100000000"; 
+
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre, precio });
+            actualizarCarritoUI();
+        }
+
+        function actualizarCarritoUI() {
+            const lista = document.getElementById('lista-carrito');
+            const totalEl = document.getElementById('total-precio');
+
+            lista.innerHTML = '';
+
+            if (carrito.length === 0) {
+                lista.innerHTML = '<li class="vacio">No agregaste productos aún.</li>';
+                totalEl.innerText = '0';
+                return;
+            }
+
+            let total = 0;
+            carrito.forEach((prod, index) => {
+                total += prod.precio;
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${prod.nombre} - $${prod.precio.toLocaleString('es-AR')}</span>
+                    <button class="btn-eliminar" onclick="eliminarDelCarrito(${index})">❌</button>
+                `;
+                lista.appendChild(li);
+            });
+
+            totalEl.innerText = total.toLocaleString('es-AR');
+        }
+
+        function eliminarDelCarrito(index) {
+            carrito.splice(index, 1);
+            actualizarCarritoUI();
+        }
+
+        function enviarWhatsApp() {
+            if (carrito.length === 0) {
+                alert("Por favor, agrega al menos un producto al carrito.");
+                return;
+            }
+
+            const nombre = document.getElementById('nombre').value;
+            const direccion = document.getElementById('direccion').value;
+            const pago = document.getElementById('pago').value;
+            const notas = document.getElementById('notas').value;
+
+            if (!nombre || !direccion) {
+                alert("Por favor completa tu nombre y dirección.");
+                return;
+            }
+
+            let listaTexto = "";
+            let total = 0;
+            carrito.forEach((p) => {
+                listaTexto += `• ${p.nombre} - $${p.precio.toLocaleString('es-AR')}\n`;
+                total += p.precio;
+            });
+
+            const mensaje = 
+`*🍔 NUEVO PEDIDO - FAST BURGER 🍟*
+___________________________________
+
+📋 *DETALLE DEL PEDIDO:*
+${listaTexto}
+💰 *TOTAL:* $${total.toLocaleString('es-AR')}
+
+👤 *DATOS DEL CLIENTE:*
+• *Nombre:* ${nombre}
+• *Dirección:* ${direccion}
+• *Forma de Pago:* ${pago}
+${notas ? `• *Notas:* ${notas}` : ''}
+___________________________________`;
+
+            const url = `https://wa.me/${TELEFONO_BURGER}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
