@@ -535,7 +535,7 @@ header {
             <!-- ITEM 1 -->
             <div class="item-card" id="card-simple-clasica">
                 <div class="item-img-container">
-                    <img src="img/Burger simple.jpg.png" alt="Simple Clásica" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500';">
+                    <img src="img/burger simple.jpg.jpeg" alt="Simple Clásica" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500';">
                 </div>
                 <div class="item-content">
                     <div>
@@ -570,12 +570,12 @@ header {
             <!-- ITEM 2 -->
             <div class="item-card" id="card-simple-cheese">
                 <div class="item-img-container">
-                    <img src="img/Burger cheese.jpg.png" alt="Simple Cheese" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=500';">
+                    <img src="img/burger cheese.jpg.jpeg" alt="Simple Cheese" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=500';">
                 </div>
                 <div class="item-content">
                     <div>
                         <div class="item-title">Simple Cheese Burger</div>
-                        <div class="item-desc">Una carne smash · doble cheddar · barbacoa y bacon</div>
+                        <div class="item-desc">Una carne smash · doble cheddar · bacon</div>
                         <div class="item-precio">$9.000</div>
 
                         <div class="aderezos-titulo">Aderezos</div>
@@ -603,165 +603,530 @@ header {
             </div>
 
 
-            <!-- SECCIÓN DOBLES -->
-            <div id="dobles"></div>
-            <h2 class="titulo-seccion">🍔 Hamburguesas Dobles</h2>
+           <!-- SECCIÓN DOBLES COMPLETA -->
+<div id="dobles"></div>
+<h2 class="titulo-seccion">🍔 Hamburguesas Dobles</h2>
 
-            <div class="item-card" id="card-doble-clasica">
-                <div class="item-img-container">
-                    <img src="img/Burger doble.jpg.png" alt="Doble Clásica" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500';">
-                </div>
-                <div class="item-content">
-                    <div>
-                        <div class="item-title">Doble Clásica</div>
-                        <div class="item-desc">Doble carne smash · lechuga, tomate y huevo · jamón y queso</div>
-                        <div class="item-precio">$12.000</div>
+<!-- 1. DOBLE BURGER CLÁSICA -->
+<div class="item-card" id="card-doble-burger-clasica">
+    <div class="item-img-container">
+        <img src="img/burger doble clasica.jpg.jpeg" alt="Doble Burger Clásica" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Doble Burger Clásica</div>
+            <div class="item-desc">Doble carne smash · lechuga, tomate y huevo · jamón y queso</div>
+            <div class="item-precio">$12.000</div>
 
-                        <div class="aderezos-titulo">Aderezos</div>
-                        <div class="grid-aderezos">
-                            <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
-                            <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
-                            <label><input type="checkbox" value="Ketchup"> Ketchup</label>
-                            <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
-                            <label><input type="checkbox" value="Mostaza"> Mostaza</label>
-                            <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
-                        </div>
-                    </div>
-
-                    <div class="action-row">
-                        <div class="qty-picker">
-                            <button class="qty-btn" onclick="cambiarCant('cant-doble-clasica', -1)">-</button>
-                            <span class="qty-value" id="cant-doble-clasica">1</span>
-                            <button class="qty-btn" onclick="cambiarCant('cant-doble-clasica', 1)">+</button>
-                        </div>
-                        <button class="btn-agregar-red" onclick="agregarProducto('card-doble-clasica', 'Doble Clásica', 12000, 'cant-doble-clasica')">
-                            🛒 AGREGAR
-                        </button>
-                    </div>
-                </div>
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
             </div>
+        </div>
 
-            <div class="item-card" id="card-doble-cheese">
-                <div class="item-img-container">
-                    <img src="img/Bueger doble cheese.jpg.png" alt="Doble Cheese" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=500';">
-                </div>
-                <div class="item-content">
-                    <div>
-                        <div class="item-title">Doble Cheese</div>
-                        <div class="item-desc">Doble carne smash · doble queso cheddar y bacon</div>
-                        <div class="item-precio">$12.000</div>
-
-                        <div class="aderezos-titulo">Aderezos</div>
-                        <div class="grid-aderezos">
-                            <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
-                            <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
-                            <label><input type="checkbox" value="Ketchup"> Ketchup</label>
-                            <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
-                            <label><input type="checkbox" value="Mostaza"> Mostaza</label>
-                            <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
-                        </div>
-                    </div>
-
-                    <div class="action-row">
-                        <div class="qty-picker">
-                            <button class="qty-btn" onclick="cambiarCant('cant-doble-cheese', -1)">-</button>
-                            <span class="qty-value" id="cant-doble-cheese">1</span>
-                            <button class="qty-btn" onclick="cambiarCant('cant-doble-cheese', 1)">+</button>
-                        </div>
-                        <button class="btn-agregar-red" onclick="agregarProducto('card-doble-cheese', 'Doble Cheese', 12000, 'cant-doble-cheese')">
-                            🛒 AGREGAR
-                        </button>
-                    </div>
-                </div>
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-burger-clasica', -1)">-</button>
+                <span class="qty-value" id="cant-doble-burger-clasica">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-burger-clasica', 1)">+</button>
             </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-doble-burger-clasica', 'Doble Burger Clásica', 12000, 'cant-doble-burger-clasica')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
 
+<!-- 2. DOBLE CHEESE BURGER -->
+<div class="item-card" id="card-doble-cheese-burger">
+    <div class="item-img-container">
+        <img src="img/burger doble cheese.jpg.jpeg" alt="Doble Cheese Burger" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Doble Cheese Burger</div>
+            <div class="item-desc">Doble carne smash · doble queso cheddar y bacon</div>
+            <div class="item-precio">$12.000</div>
 
-            <!-- SECCIÓN ESPECIALES -->
-            <div id="especiales"></div>
-            <h2 class="titulo-seccion">⭐ Especiales</h2>
-
-            <div class="item-card" id="card-cuadruple-cheese">
-                <div class="item-img-container">
-                    <img src="img/Burger cuadruple.jpg.png" alt="Cuádruple Cheese" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500';">
-                </div>
-                <div class="item-content">
-                    <div>
-                        <div class="item-title">Cuádruple Cheese</div>
-                        <div class="item-desc">4 carnes smash · 4 queso cheddar y bacon</div>
-                        <div class="item-precio">$15.000</div>
-
-                        <div class="aderezos-titulo">Aderezos</div>
-                        <div class="grid-aderezos">
-                            <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
-                            <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
-                            <label><input type="checkbox" value="Ketchup"> Ketchup</label>
-                            <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
-                            <label><input type="checkbox" value="Mostaza"> Mostaza</label>
-                            <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
-                        </div>
-                    </div>
-
-                    <div class="action-row">
-                        <div class="qty-picker">
-                            <button class="qty-btn" onclick="cambiarCant('cant-cuadruple', -1)">-</button>
-                            <span class="qty-value" id="cant-cuadruple">1</span>
-                            <button class="qty-btn" onclick="cambiarCant('cant-cuadruple', 1)">+</button>
-                        </div>
-                        <button class="btn-agregar-red" onclick="agregarProducto('card-cuadruple-cheese', 'Cuádruple Cheese', 15000, 'cant-cuadruple')">
-                            🛒 AGREGAR
-                        </button>
-                    </div>
-                </div>
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
             </div>
+        </div>
 
-            <!-- SECCIÓN COMBOS -->
-            <div id="combos"></div>
-            <h2 class="titulo-seccion">🎁 Combos para Compartir</h2>
-
-            <div class="item-card" id="card-combo-doble">
-                <div class="item-img-container">
-                    <img src="img/Combo doble.jpg.png" alt="Combo Doble Burger" onerror="this.src='https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500';">
-                </div>
-                <div class="item-content">
-                    <div>
-                        <div class="item-title">Combo Doble Burger</div>
-                        <div class="item-desc">2 Hamb. Dobles + Papas + 2 Latas de gaseosa</div>
-                        <div class="item-precio">$25.000</div>
-
-                        <div class="aderezos-titulo">Elección de Hamburguesas:</div>
-                        <select id="combo1-h1" class="select-combo">
-                            <option value="Doble Clásica">H1: Doble Clásica</option>
-                            <option value="Doble Cheese">H1: Doble Cheese</option>
-                            <option value="Doble Oklahoma">H1: Doble Oklahoma</option>
-                        </select>
-                        <select id="combo1-h2" class="select-combo">
-                            <option value="Doble Clásica">H2: Doble Clásica</option>
-                            <option value="Doble Cheese">H2: Doble Cheese</option>
-                            <option value="Doble Oklahoma">H2: Doble Oklahoma</option>
-                        </select>
-
-                        <div class="aderezos-titulo">Aderezos</div>
-                        <div class="grid-aderezos">
-                            <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
-                            <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
-                            <label><input type="checkbox" value="Ketchup"> Ketchup</label>
-                            <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
-                        </div>
-                    </div>
-
-                    <div class="action-row">
-                        <div class="qty-picker">
-                            <button class="qty-btn" onclick="cambiarCant('cant-combo1', -1)">-</button>
-                            <span class="qty-value" id="cant-combo1">1</span>
-                            <button class="qty-btn" onclick="cambiarCant('cant-combo1', 1)">+</button>
-                        </div>
-                        <button class="btn-agregar-red" onclick="agregarCombo('card-combo-doble', 'Combo Doble Burger', 25000, ['combo1-h1', 'combo1-h2'], 'cant-combo1')">
-                            🛒 AGREGAR
-                        </button>
-                    </div>
-                </div>
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-cheese-burger', -1)">-</button>
+                <span class="qty-value" id="cant-doble-cheese-burger">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-cheese-burger', 1)">+</button>
             </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-doble-cheese-burger', 'Doble Cheese Burger', 12000, 'cant-doble-cheese-burger')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
 
+<!-- 3. DOBLE THE FAST BURGER  -->
+<div class="item-card" id="card-doble-the-fast">
+    <div class="item-img-container">
+        <img src="img/burger the fast.jpg.jpeg" alt="Doble The Fast" onerror="this.src='https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Doble The Fast</div>
+            <div class="item-desc">Doble carne smash · doble cheddar · panceta  y huevo frito</div>
+            <div class="item-precio">$12.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-the-fast', -1)">-</button>
+                <span class="qty-value" id="cant-doble-the-fast">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-the-fast', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-the-fast', 'Doble The Fast', 12500, 'cant-doble-the-fast')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 4. DOBLE OKLAHOMA BURGER -->
+<div class="item-card" id="card-doble-oklahoma">
+    <div class="item-img-container">
+        <img src="img/burger oklahoma.jpg.jpeg" alt="Doble Oklahoma" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Doble Oklahoma</div>
+            <div class="item-desc">Doble carne smash caramelizada con cebolla en la plancha · cheddar </div>
+            <div class="item-precio">$12.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-oklahoma', -1)">-</button>
+                <span class="qty-value" id="cant-doble-oklahoma">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-doble-oklahoma', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-doble-oklahoma', 'Doble Oklahoma', 12500, 'cant-doble-oklahoma')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+
+           <!-- ==========================================
+     SECCIÓN ESPECIALES
+=========================================== -->
+<div id="especiales"></div>
+<h2 class="titulo-seccion">⭐ Hamburguesas Especiales</h2>
+
+<!-- Cuádruple Cheese -->
+<div class="item-card" id="card-cuadruple-cheese">
+    <div class="item-img-container">
+        <img src="img/cuadruple cheese.jpg.jpeg" alt="Cuádruple Cheese" onerror="this.src='https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Cuádruple Cheese</div>
+            <div class="item-desc">4 medallas de carne smash · 4 capas de queso cheddar y bacon crocante</div>
+            <div class="item-precio">$15.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-cuadruple-cheese', -1)">-</button>
+                <span class="qty-value" id="cant-cuadruple-cheese">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-cuadruple-cheese', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-cuadruple-cheese', 'Cuádruple Cheese', 14000, 'cant-cuadruple-cheese')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Mexican Burger-->
+<div class="item-card" id="card-mexican">
+    <div class="item-img-container">
+        <img src="img/mexican.jpg.jpeg" alt="Mexican" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Mexican</div>
+            <div class="item-desc">Doble carne · guacamole casero · cheddar · jalapeños y nachos crocantes</div>
+            <div class="item-precio">$15.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-mexican', -1)">-</button>
+                <span class="qty-value" id="cant-mexican">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-mexican', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-mexican', 'Mexican', 15000, 'cant-mexican')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Doritos Crunch -->
+<div class="item-card" id="card-doritos-crunch">
+    <div class="item-img-container">
+        <img src="img/doritos.jpg.jpeg" alt="Doritos Crunch" onerror="this.src='https://images.unsplash.com/photo-1550547660-d9450f859349?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Doritos Crunch</div>
+            <div class="item-desc">Doble carne · cheddar fundido · lluvia de Doritos crocantes y salsa especial</div>
+            <div class="item-precio">$15.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-doritos', -1)">-</button>
+                <span class="qty-value" id="cant-doritos">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-doritos', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-doritos-crunch', 'Doritos Crunch', 15000, 'cant-doritos')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     SECCIÓN CARNE DESMECHADA
+=========================================== -->
+<div id="desmechada"></div>
+<h2 class="titulo-seccion">🥩 Carne Desmechada</h2>
+
+<!-- El Campeón -->
+<div class="item-card" id="card-el-campeon">
+    <div class="item-img-container">
+        <img src="img/El campeón chesse.jpg.png" alt="El Campeón" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">El Campeón</div>
+            <div class="item-desc">Abundante carne desmechada · Queso Blanco Cremoso · cebolla caramelizada ·Salsa Barbacoa y mayo casera de ajo</div>
+            <div class="item-precio">$15.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-campeon', -1)">-</button>
+                <span class="qty-value" id="cant-campeon">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-campeon', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-el-campeon', 'El Campeón', 13500, 'cant-campeon')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- El Campeón Cheese -->
+<div class="item-card" id="card-el-campeon-cheese">
+    <div class="item-img-container">
+        <img src="img/El campeón.jpg.png" alt="El Campeón Cheese" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">El Campeón Cheese</div>
+            <div class="item-desc">Carne desmechada · extra queso cheddar  · cebolla caramelizada · salsa Barbacoa · mayo de chimi</div>
+            <div class="item-precio">$15.000</div>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-campeon-cheese', -1)">-</button>
+                <span class="qty-value" id="cant-campeon-cheese">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-campeon-cheese', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-el-campeon-cheese', 'El Campeón Cheese', 14000, 'cant-campeon-cheese')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==========================================
+     SECCIÓN COMBOS
+=========================================== -->
+<div id="combos"></div>
+<h2 class="titulo-seccion">🎁 Combos</h2>
+
+<!-- ==========================================
+     SECCIÓN COMBOS
+=========================================== -->
+<div id="combos"></div>
+<h2 class="titulo-seccion">🎁 Combos</h2>
+
+<!-- Combo Doble Burger -->
+<div class="item-card" id="card-combo-doble">
+    <div class="item-img-container">
+        <img src="img/Combo doble.jpg.png" alt="Combo Doble Burger" onerror="this.src='https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Combo Doble Burger</div>
+            <div class="item-desc">1 Hamburguesa Doble a elección + Papas Fritas +  2 Gaseosa 500ml</div>
+            <div class="item-precio">$25.000</div>
+
+            <!-- Elección de Hamburguesas -->
+            <div class="aderezos-titulo">Primera Hamburguesa:</div>
+            <select class="input-form opcion-combo-1" style="width: 100%; margin-bottom: 8px; padding: 6px; border-radius: 5px; background: #222; color: #fff; border: 1px solid #444;">
+                <option value="Doble Clásica">Doble Clásica</option>
+                <option value="Doble Cheese" selected>Doble Cheese</option>
+                <option value="Doble Bacon Crispy">Doble The Fast</option>
+                <option value="Doble Oklahoma">Doble Oklahoma</option>
+            </select>
+
+            <div class="aderezos-titulo">Segunda Hamburguesa:</div>
+            <select class="input-form opcion-combo-2" style="width: 100%; margin-bottom: 10px; padding: 6px; border-radius: 5px; background: #222; color: #fff; border: 1px solid #444;">
+                <option value="Doble Clásica">Doble Clásica</option>
+                <option value="Doble Cheese" selected>Doble Cheese</option>
+                <option value="Doble Bacon Crispy">Doble Bacon Crispy</option>
+                <option value="Doble Oklahoma">Doble Oklahoma</option>
+            </select>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-combo-doble', -1)">-</button>
+                <span class="qty-value" id="cant-combo-doble">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-combo-doble', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-combo-doble', 'Combo Doble Burger', 15500, 'cant-combo-doble')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Combo Rasta -->
+<div class="item-card" id="card-combo-rasta">
+    <div class="item-img-container">
+        <img src="img/Combo rasta.jpg.png" alt="Combo Rasta" onerror="this.src='https://images.unsplash.com/photo-1594212699903-ec8a3eca50f6?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Combo Rasta</div>
+            <div class="item-desc">2 Hamburguesas Dobles a elección + Papas Fritas Grandes + 2 Gaseosa latas</div>
+            <div class="item-precio">$27.000</div>
+
+            <!-- Elección de Hamburguesas -->
+            <div class="aderezos-titulo">Primera Hamburguesa:</div>
+            <select class="input-form opcion-combo-1" style="width: 100%; margin-bottom: 8px; padding: 6px; border-radius: 5px; background: #222; color: #fff; border: 1px solid #444;">
+                <option value="Doble Clásica">Doble Clásica</option>
+                <option value="Doble Cheese" selected>Doble Cheese</option>
+                <option value="Doble Bacon Crispy">Doble The Fast</option>
+                <option value="Doble Oklahoma">Doble Oklahoma</option>
+            </select>
+
+            <div class="aderezos-titulo">Segunda Hamburguesa:</div>
+            <select class="input-form opcion-combo-2" style="width: 100%; margin-bottom: 10px; padding: 6px; border-radius: 5px; background: #222; color: #fff; border: 1px solid #444;">
+                <option value="Doble Clásica">Doble Clásica</option>
+                <option value="Doble Cheese" selected>Doble Cheese</option>
+                <option value="Doble Bacon Crispy">Doble Bacon Crispy</option>
+                <option value="Doble Oklahoma">Doble Oklahoma</option>
+            </select>
+
+            <div class="aderezos-titulo">Aderezos</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-combo-rasta', -1)">-</button>
+                <span class="qty-value" id="cant-combo-rasta">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-combo-rasta', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-combo-rasta', 'Combo Rasta', 26000, 'cant-combo-rasta')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==========================================
+     SECCIÓN POLLO Y NUGGETS
+=========================================== -->
+<div id="pollo"></div>
+<h2 class="titulo-seccion">🍗 Pollo & Fritos</h2>
+
+<!-- Porción de Nuggets -->
+<div class="item-card" id="card-nuggets">
+    <div class="item-img-container">
+        <img src="img/Nuggets.jpg.png" alt="Porción de Nuggets" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Porción de Nuggets (10 unidades)</div>
+            <div class="item-desc">Nuggets crocantes de pechuga de pollo, sabrosos y ideal para compartir</div>
+            <div class="item-precio">$4.500</div>
+
+            <div class="aderezos-titulo">Aderezos / Dips</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-nuggets', -1)">-</button>
+                <span class="qty-value" id="cant-nuggets">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-nuggets', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-nuggets', 'Porción de Nuggets', 7500, 'cant-nuggets')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Chicken Box -->
+<div class="item-card" id="card-chicken-box">
+    <div class="item-img-container">
+        <img src="img/Chicken.jpg.png" alt="Chicken Box" onerror="this.src='https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500';">
+    </div>
+    <div class="item-content">
+        <div>
+            <div class="item-title">Chicken Box</div>
+            <div class="item-desc">Caja mixta: 12 nuggets crocantes + porción grande de papas fritas</div>
+            <div class="item-precio">$5.000</div>
+
+            <div class="aderezos-titulo">Aderezos / Dips</div>
+            <div class="grid-aderezos">
+                <label><input type="checkbox" value="Mayonesa"> Mayonesa</label>
+                <label><input type="checkbox" value="Salsa golf"> Salsa golf</label>
+                <label><input type="checkbox" value="Ketchup"> Ketchup</label>
+                <label><input type="checkbox" value="Barbacoa"> Barbacoa</label>
+                <label><input type="checkbox" value="Mostaza"> Mostaza</label>
+                <label><input type="checkbox" value="Picante"> 🌶️ Picante</label>
+            </div>
+        </div>
+
+        <div class="action-row">
+            <div class="qty-picker">
+                <button class="qty-btn" onclick="cambiarCant('cant-chicken-box', -1)">-</button>
+                <span class="qty-value" id="cant-chicken-box">1</span>
+                <button class="qty-btn" onclick="cambiarCant('cant-chicken-box', 1)">+</button>
+            </div>
+            <button class="btn-agregar-red" onclick="agregarProducto('card-chicken-box', 'Chicken Box', 11000, 'cant-chicken-box')">
+                🛒 AGREGAR
+            </button>
+        </div>
+    </div>
+</div>
 <!-- SECCIÓN BEBIDAS CON TARJETAS PROPORCIONADAS -->
 <div id="bebidas"></div>
 <h2 class="titulo-seccion">🥤 Bebidas</h2>
@@ -889,11 +1254,15 @@ header {
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" placeholder="Tu nombre" required>
 
-                <label for="tipo-entrega">Entrega:</label>
-                <select id="tipo-entrega" onchange="actualizarTotal()">
-                    <option value="retiro">Retiro en Local ($0)</option>
-                    <option value="delivery">Envío a Domicilio (+$1.500)</option>
-                </select>
+                <!-- CAMBIO EN EL TIPO DE ENTREGA -->
+<label for="tipo-entrega" style="font-weight: bold; color: #fff; display: block; margin-top: 10px;">Forma de Entrega:</label>
+<select id="tipo-entrega" class="input-form" onchange="actualizarTotal()">
+    <option value="Local">Retiro en Local</option>
+    <option value="Delivery">Envío a Domicilio (Costo de envío a coordinar)</option>
+</select>
+<p style="font-size: 0.8rem; color: #aaa; margin-top: 5px;">
+    * Si elige Delivery, el costo de envío se calculará y sumará al coordinar por WhatsApp.
+</p>
 
                 <label for="direccion">Dirección (si es Delivery):</label>
                 <input type="text" id="direccion" placeholder="Calle, número y departamento">
